@@ -26,35 +26,40 @@ $allNames = new  HomepageController();
 
     <?php require 'includes/header.php'?>
 
-<!--    <section>-->
-<!--        <h4>Hello --><?php //echo $user->getName()?><!--,</h4>-->
-<!--        <p>Put your content here.</p>-->
-<!--    </section>-->
     <?php require 'includes/footer.php'?>
     <div class = "row">
         <div class = "col-4 bg-info">
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Customer
-                </button>
-
-                <select class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div  class="dropdown">
+                <p> Select your customer</p>
+                <select name="Customer"  onchange="customerSelect()" id="selectCustomer">
+                    <option value='Not Available'>Customers Name</option>
                     <?php  $allNames->displayCustomerName(); ?>
                 </select>
+                <p id="resultCustomer"> </p>
             </div>
         </div>
         <div class = "col-4 bg-info">
             <div class="dropdown">
-                <button class="mx-auto btn btn-primary dropdown-toggle scrollable-menu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Product
-                </button>
-                <select class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <p> Select your products </p>
+                <select name="Product" onchange="productSelect()" id="selectProducts" >
+                    <option value='Not Available'>Products Name</option>
                     <?php  $allNames->displayProductsName(); ?>
                 </select>
+                <p id="resultProduct"> </p>
             </div>
         </div>
     </div>
 
+    <script>
+        function customerSelect() {
+            var x = document.getElementById("selectCustomer").value;
+            document.getElementById("resultCustomer").innerHTML = "You selected: " + x;
+        }
+        function productSelect() {
+            var y = document.getElementById("selectProducts").value;
+            document.getElementById("resultProduct").innerHTML = "You selected: " + y;
+        }
+    </script>
 
 
     <!-- Optional JavaScript -->
