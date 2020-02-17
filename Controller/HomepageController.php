@@ -15,4 +15,19 @@ class HomepageController
         //load the view
         require 'View/homepage.php';
     }
+
+    public function displayProductsName(){
+
+        $allData = new User();
+        $allProductsArray = $allData->getAllProducts();
+        var_dump($allProductsArray);
+        foreach ($allProductsArray as $key => $name ){
+         // echo ' <a  href="#" id= ".$key." > '.$name["name"]. '</a>';
+            echo $name['name'];
+        }
+    }
+
+    public function displayCustomerName(){
+
+    }
 }

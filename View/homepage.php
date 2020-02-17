@@ -5,10 +5,10 @@ ini_set('display_errors', "1");
 ini_set('display_startup_errors', "1");
 error_reporting(E_ALL);
 
-$allData = new User();
-$allCustomersArray = $allData->getAllCustomers();
+$allNames = new  HomepageController();
 
-var_dump($allCustomersArray);
+//var_dump($allCustomersArray["0"]['name']);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,7 +23,9 @@ var_dump($allCustomersArray);
     <title>MVC</title>
 </head>
 <body>
+
     <?php require 'includes/header.php'?>
+    <?php  $allNames->displayProductsName(); ?>
 <!--    <section>-->
 <!--        <h4>Hello --><?php //echo $user->getName()?><!--,</h4>-->
 <!--        <p>Put your content here.</p>-->
@@ -36,9 +38,7 @@ var_dump($allCustomersArray);
                     Customer
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <?php // $allNames->displayCustomerName(); ?>
                 </div>
             </div>
         </div>
@@ -48,9 +48,7 @@ var_dump($allCustomersArray);
                     Product
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+
                 </div>
             </div>
         </div>

@@ -17,15 +17,17 @@ class User
     // to get all the customer information
     public function getAllCustomers()
     {
-        $allCustomers = file_get_contents("../Database/customers.json");
-        $allCustomersArray = json_decode($allCustomers, true);
+        $allCustomers = file_get_contents("Database/customers.json");
+        $allCustomersArray = json_decode($allCustomers);
         return $allCustomersArray;
         //var_dump($allCustomersArray);
     }
     // to get all the products information
-    public function getAllProducts()
+    public function getAllProducts() : array
     {
-        $allCustomers = file_get_contents("../Database/products.json");
-        var_dump($allCustomers);
+        $allProducts = file_get_contents("Database/products.json");
+        $allProductsArray = json_decode($allProducts);
+        //date(var_dump($allProductsArray));
+        return $allProductsArray;
     }
 }
