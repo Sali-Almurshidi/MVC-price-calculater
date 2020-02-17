@@ -56,7 +56,7 @@ $controller->render($_GET, $_POST);
         </div>
     </div>
 </div>
-</body>
+
 
 
 <!-- Optional JavaScript -->
