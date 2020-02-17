@@ -25,7 +25,7 @@ $allNames = new  HomepageController();
 <body>
 
     <?php require 'includes/header.php'?>
-    <?php  $allNames->displayProductsName(); ?>
+
 <!--    <section>-->
 <!--        <h4>Hello --><?php //echo $user->getName()?><!--,</h4>-->
 <!--        <p>Put your content here.</p>-->
@@ -37,19 +37,20 @@ $allNames = new  HomepageController();
                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Customer
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <?php // $allNames->displayCustomerName(); ?>
-                </div>
+
+                <select class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <?php  $allNames->displayCustomerName(); ?>
+                </select>
             </div>
         </div>
         <div class = "col-4 bg-info">
             <div class="dropdown">
-                <button class="mx-auto btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="mx-auto btn btn-primary dropdown-toggle scrollable-menu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Product
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-                </div>
+                <select class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <?php  $allNames->displayProductsName(); ?>
+                </select>
             </div>
         </div>
     </div>

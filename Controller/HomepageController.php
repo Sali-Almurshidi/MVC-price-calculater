@@ -17,17 +17,20 @@ class HomepageController
     }
 
     public function displayProductsName(){
-
         $allData = new User();
         $allProductsArray = $allData->getAllProducts();
-        var_dump($allProductsArray);
-        foreach ($allProductsArray as $key => $name ){
-         // echo ' <a  href="#" id= ".$key." > '.$name["name"]. '</a>';
-            echo $name['name'];
+        //var_dump($allProductsArray);
+      foreach ($allProductsArray as $key => $name ){
+          echo ' <option value="'.$name->name.'"  href="#" id= "'.$key.'" > '.$name->name. '</option>';
         }
     }
 
     public function displayCustomerName(){
-
+        $allData = new User();
+        $allCustomerArray = $allData->getAllProducts();
+        //var_dump($allProductsArray);
+        foreach ($allCustomerArray as $key => $name ){
+            echo ' <option  href="#" id= "'.$key.'" > '.$name->name. '</option>';
+        }
     }
 }
