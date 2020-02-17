@@ -14,4 +14,3 @@ require 'Controller/HomepageController.php';
 //this file should never be more than 20 lines of code!
 $controller = new HomepageController();
 $controller->render($_GET, $_POST);
-
