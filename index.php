@@ -15,6 +15,11 @@ $controller = new HomepageController();
 $controller->render($_GET, $_POST);
 
 
+$allData = new User();
+$allCustomersArray = $allData->getAllCustomers();
+
+var_dump($allCustomersArray);
+
 ?>
 <!doctype html>
 <html lang="en">
