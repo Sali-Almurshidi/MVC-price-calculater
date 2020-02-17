@@ -61,7 +61,7 @@ var_dump($allCustomersArray);
         </div>
     </div>
 </div>
-</body>
+
 
 
 <!-- Optional JavaScript -->
