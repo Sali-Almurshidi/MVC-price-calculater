@@ -44,7 +44,7 @@ $allNames = new  HomepageController();
         </div>
         <div class = "col-4 bg-info">
             <div class="dropdown">
-                <button class="mx-auto btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="mx-auto btn btn-primary dropdown-toggle scrollable-menu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Product
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

@@ -45,8 +45,7 @@
         "id": 8,
         "name": "customer support",
         "fixed_discount": 11,
-        "group_id": 5
-    },
+        "group_id": 5},
     {
         "id": 9,
         "name": "customer support",

@@ -20,10 +20,12 @@ class HomepageController
 
         $allData = new User();
         $allProductsArray = $allData->getAllProducts();
-        var_dump($allProductsArray);
+        //var_dump($allProductsArray);
+
+
         foreach ($allProductsArray as $key => $name ){
          // echo ' <a  href="#" id= ".$key." > '.$name["name"]. '</a>';
-            echo $name['name'];
+            echo $name->name."<br>";
         }
     }
 
