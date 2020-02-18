@@ -95,7 +95,7 @@ class Products
 
     }
 
-    public function displayProductsName(): array
+    public function displayProductsName(): void
     {
         $this->getProuductsArray();
 

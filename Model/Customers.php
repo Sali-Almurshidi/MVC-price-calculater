@@ -75,7 +75,7 @@ class Customers
         $this->allCustomersArray = $allData->getAllCustomers();
     }
 
-    public function displayCustomersName(): array
+    public function displayCustomersName(): void
     {
         $this->getCustomersArray();
 
