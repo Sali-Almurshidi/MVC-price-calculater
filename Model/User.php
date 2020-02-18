@@ -19,11 +19,12 @@ class User
     {
         $allCustomers = file_get_contents("Database/customers.json");
         $allCustomersArray = json_decode($allCustomers);
+       // var_dump($allCustomersArray);
         return $allCustomersArray;
-        //var_dump($allCustomersArray);
+
     }
     // to get all the products information
-    public function getAllProducts() : array
+    public function getAllProducts()
     {
         $allProducts = file_get_contents("Database/products.json");
         $allProductsArray = json_decode($allProducts);
