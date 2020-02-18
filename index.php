@@ -10,6 +10,9 @@ require 'Model/Products.php';
 require 'Model/Groups.php';
 //include all your controllers here
 require 'Controller/HomepageController.php';
+/*$userStorage = new  User();
+localStorage.setItem(‘allCustomers’, $userStorage->getAllCustomers());
+localStorage.setItem(‘allProducts’, $userStorage->getAllProducts());*/
 
 
 //you could write a simple IF here based on some $_GET or $_POST vars, to choose your controller
