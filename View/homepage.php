@@ -1,3 +1,10 @@
+<?php
+declare(strict_types=1);
+session_start();
+
+$allNames = new  HomepageController();
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,52 +18,53 @@
     <title>MVC</title>
 </head>
 <body>
-    <?php require 'includes/header.php'?>
-<!--    <section>-->
-<!--        <h4>Hello --><?php //echo $user->getName()?><!--,</h4>-->
-<!--        <p>Put your content here.</p>-->
-<!--    </section>-->
-    <?php require 'includes/footer.php'?>
-    <div class = "row">
-        <div class = "col-4 bg-info">
+
+<?php require 'includes/header.php' ?>
+
+
+<form method="post">
+    <div class="row">
+        <div class="col-4 bg-info">
             <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Customer
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+                <p> Select your customer</p>
+                <select name="Customer" id="selectCustomer">
+                    <option value='Not Available'>Customers Name</option>
+                    <?php $allNames->displayCustomerName(); ?>
+                </select>
+                <p id="resultCustomer"></p>
             </div>
         </div>
-        <div class = "col-4 bg-info">
+        <div class="col-4 bg-info">
             <div class="dropdown">
-                <button class="mx-auto btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Product
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+
+                <p> Select your products </p>
+                <select name="Product" id="selectProducts">
+                    <option value='Not Available'>Products Name</option>
+                    <?php $allNames->displayProductsName(); ?>
+                </select>
+                <p id="resultProduct"></p>
+                <button type="submit" name="submit">Submit</button>
+                <button type="submit" name="refresh" class="btn btn-primary">refresh page!</button>
             </div>
+
         </div>
+
     </div>
+</form>
 
+<?php require 'includes/footer.php' ?>
 
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 </html>
 
