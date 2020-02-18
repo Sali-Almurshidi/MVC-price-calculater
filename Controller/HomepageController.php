@@ -32,6 +32,8 @@ class HomepageController
         // }
         }
 
+
+
         require 'View/homepage.php';
     }
 
