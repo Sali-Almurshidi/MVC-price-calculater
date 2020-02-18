@@ -1,11 +1,12 @@
 <?php
-
+declare(strict_types=1);
 
 class Customers
 {
     private  $id;
     private  $name;
     private  $group_id;
+    private $allCustomersArray = array();
 
     /**
      * Customers constructor.
@@ -13,12 +14,12 @@ class Customers
      * @param string $name
      * @param int $group_id
      */
-    public function __construct(int $id, string $name, int $group_id)
+/*    public function __construct(int $id, string $name, int $group_id)
     {
         $this->id = $id;
         $this->name = $name;
         $this->group_id = $group_id;
-    }
+    }*/
 
     /**
      * @return int
@@ -68,5 +69,18 @@ class Customers
         $this->group_id = $group_id;
     }
 
+    public function getCustomersArray()
+    {
+        $allData = new User();
+        $this->allCustomersArray = $allData->getAllCustomers();
+    }
 
+    public function displayCustomersName(): array
+    {
+        $this->getCustomersArray();
+
+        foreach ( $this->allCustomersArray as $key => $name) {
+            echo ' <option value="' . $name->name . '"  href="#" id= "' . $key . '" > ' . $name->name . '</option>';
+        }
+    }
 }

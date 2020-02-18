@@ -4,6 +4,8 @@ declare(strict_types=1);
 class User
 {
     private $name;
+    private $allProductsArray = [];
+    private $allCustomersArray = [];
 
  /*   public function __construct(string $name)
     {
@@ -18,17 +20,15 @@ class User
     public function getAllCustomers()
     {
         $allCustomers = file_get_contents("Database/customers.json");
-        $allCustomersArray = json_decode($allCustomers);
-       // var_dump($allCustomersArray);
-        return $allCustomersArray;
+        $this->allCustomersArray = json_decode($allCustomers);
+        return $this->allCustomersArray;
 
     }
     // to get all the products information
     public function getAllProducts()
     {
         $allProducts = file_get_contents("Database/products.json");
-        $allProductsArray = json_decode($allProducts);
-        //date(var_dump($allProductsArray));
-        return $allProductsArray;
+        $this->allProductsArray = json_decode($allProducts);
+        return $this->allProductsArray;
     }
 }

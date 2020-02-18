@@ -7,6 +7,7 @@ class Products
     private $name ;
     private $description ;
     private  $price ;
+    private $allProductsArray = array();
 
     /**
      * Products constructor.
@@ -15,13 +16,13 @@ class Products
      * @param $description
      * @param Float $price
      */
-    public function __construct($id, $name, $description, Float $price)
+    /*public function __construct($id, $name, $description, Float $price)
     {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
         $this->price = $price;
-    }
+    }*/
 
     /**
      * @return mixed
@@ -87,5 +88,20 @@ class Products
         $this->price = $price;
     }
 
+    public function getProuductsArray()
+    {
+        $allData = new User();
+        $this->allProductsArray = $allData->getAllProducts();
+
+    }
+
+    public function displayProductsName(): array
+    {
+        $this->getProuductsArray();
+
+        foreach ( $this->allProductsArray as $key => $name) {
+            echo ' <option value="' . $name->name . '"  href="#" id= "' . $key . '" > ' . $name->name . '</option>';
+        }
+    }
 
 }
