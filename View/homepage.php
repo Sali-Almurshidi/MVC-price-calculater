@@ -8,7 +8,18 @@ error_reporting(E_ALL);
 $allNames = new  HomepageController();
 
 //var_dump($allCustomersArray["0"]['name']);
+function whatIsHappening() {
+    echo '<h2>$_GET</h2>';
+    var_dump($_GET);
+    echo '<h2>$_POST</h2>';
+    var_dump($_POST);
+    echo '<h2>$_COOKIE</h2>';
+    var_dump($_COOKIE);
+    echo '<h2>$_SESSION</h2>';
+    var_dump($_SESSION);
+}
 
+whatIsHappening();
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,16 +29,17 @@ $allNames = new  HomepageController();
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>MVC</title>
 </head>
 <body>
 
     <?php require 'includes/header.php'?>
 
-    <?php require 'includes/footer.php'?>
-    <div class = "row">
+
+
+<form method="post">
+    <div class = "row" >
         <div class = "col-4 bg-info">
             <div  class="dropdown">
                 <p> Select your customer</p>
@@ -40,16 +52,20 @@ $allNames = new  HomepageController();
         </div>
         <div class = "col-4 bg-info">
             <div class="dropdown">
+
                 <p> Select your products </p>
                 <select name="Product" onchange="productSelect()" id="selectProducts" >
                     <option value='Not Available'>Products Name</option>
                     <?php  $allNames->displayProductsName(); ?>
                 </select>
                 <p id="resultProduct"> </p>
+                <button type="submit" name="submit">Submit</button>
+                <button type="submit" name="refresh" class="btn btn-primary">refresh page!</button>
             </div>
         </div>
-    </div>
 
+    </div>
+</form>
     <script>
         function customerSelect() {
             var x = document.getElementById("selectCustomer").value;
@@ -60,19 +76,13 @@ $allNames = new  HomepageController();
             document.getElementById("resultProduct").innerHTML = "You selected: " + y;
         }
     </script>
-
+    <?php require 'includes/footer.php'?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
 

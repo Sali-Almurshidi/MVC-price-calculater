@@ -1,8 +1,10 @@
 <?php
 declare(strict_types = 1);
 
+
 class HomepageController
 {
+
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function render(array $GET, array $POST)
     {
@@ -13,16 +15,37 @@ class HomepageController
         // then the view will actually display them.
 
         //load the view
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST["submit"])) {
+
+                if (isset($_POST["Product"]) && isset ($_POST["Customer"] ) ) {
+                    $_SESSION["product ID:"] = $_POST["Product"];
+                    $_SESSION["customer ID:"] = $_POST["Customer"];
+
+                }
+
+
+                echo ("test");
+            }
+        }
+
         require 'View/homepage.php';
     }
 
     public function displayProductsName(){
         $allData = new User();
         $allProductsArray = $allData->getAllProducts();
+
         //var_dump($allProductsArray);
+
+
       foreach ($allProductsArray as $key => $name ){
           echo ' <option value="'.$name->name.'"  href="#" id= "'.$key.'" > '.$name->name. '</option>';
+
+
         }
+
     }
 
     public function displayCustomerName(){
@@ -33,4 +56,10 @@ class HomepageController
             echo ' <option  href="#" id= "'.$key.'" > '.$name->name. '</option>';
         }
     }
+
 }
+if (isset($_POST["refresh"])) {
+    header("refresh");
+    session_destroy();
+}
+
