@@ -2,7 +2,9 @@
 declare(strict_types=1);
 session_start();
 
-$allNames = new  HomepageController();
+//$allNames = new  HomepageController();
+$allProductsNames = new  Products();
+$allCustomerNames = new  Customers();
 
 ?>
 <!doctype html>
@@ -23,34 +25,43 @@ $allNames = new  HomepageController();
 
 
 <form method="post">
+
+    <button type="submit" name="submit">Submit</button>
+
+    <button type="submit" name="refresh" class="btn btn-primary">refresh page!</button>
+
     <div class="row">
+
         <div class="col-4 bg-info">
             <div class="dropdown">
                 <p> Select your customer</p>
                 <select name="Customer" id="selectCustomer">
                     <option value='Not Available'>Customers Name</option>
-                    <?php $allNames->displayCustomerName(); ?>
+                    <?php
+                    $allCustomerNames->displayCustomersName();
+                    ?>
                 </select>
                 <p id="resultCustomer"></p>
             </div>
         </div>
+
         <div class="col-4 bg-info">
             <div class="dropdown">
-
-                <p> Select your products </p>
-                <select name="Product" id="selectProducts">
+                <p> Select your products</p>
+                <select name="Product" id="selectProduct">
                     <option value='Not Available'>Products Name</option>
-                    <?php $allNames->displayProductsName(); ?>
+                    <?php
+                    $allProductsNames->displayProductsName();
+                    ?>
                 </select>
                 <p id="resultProduct"></p>
-                <button type="submit" name="submit">Submit</button>
-                <button type="submit" name="refresh" class="btn btn-primary">refresh page!</button>
             </div>
-
         </div>
 
     </div>
+
 </form>
+
 
 <?php require 'includes/footer.php' ?>
 

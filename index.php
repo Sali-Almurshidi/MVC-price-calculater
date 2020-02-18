@@ -5,6 +5,9 @@ ini_set('display_startup_errors', "1");
 error_reporting(E_ALL);
 //include all your model files here
 require 'Model/User.php';
+require 'Model/Customers.php';
+require 'Model/Products.php';
+require 'Model/Groups.php';
 //include all your controllers here
 require 'Controller/HomepageController.php';
 
