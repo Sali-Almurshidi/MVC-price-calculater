@@ -27,7 +27,7 @@ class HomepageController
 
     public function displayCustomerName(){
         $allData = new User();
-        $allCustomerArray = $allData->getAllProducts();
+        $allCustomerArray = $allData->getAllCustomers();
         //var_dump($allProductsArray);
         foreach ($allCustomerArray as $key => $name ){
             echo ' <option  href="#" id= "'.$key.'" > '.$name->name. '</option>';
