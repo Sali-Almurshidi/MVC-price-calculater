@@ -9,8 +9,6 @@ require '../Model/Groups.php';
 //include all your controllers here
 require '../Controller/HomepageController.php';
 
-
-
 $customerID = $_SESSION['customerID'];
 $productsID = $_SESSION['productID'];
 

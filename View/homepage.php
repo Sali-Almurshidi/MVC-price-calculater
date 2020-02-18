@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-session_start();
+
 
 //$allNames = new  HomepageController();
 $allProductsNames = new  Products();
@@ -28,7 +28,6 @@ $allCustomerNames = new  Customers();
 
     <button type="submit" name="submit">Submit</button>
 
-    <button type="submit" name="refresh" class="btn btn-primary">refresh page!</button>
 
     <div class="row">
 
@@ -39,6 +38,7 @@ $allCustomerNames = new  Customers();
                     <option value='Not Available'>Customers Name</option>
                     <?php
                     $allCustomerNames->displayCustomersName();
+
                     ?>
                 </select>
                 <p id="resultCustomer"></p>

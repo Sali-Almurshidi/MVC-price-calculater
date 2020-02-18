@@ -90,12 +90,10 @@ class Products
 
     public function getProuductsArray()
     {
-        $allData = new User();
-        $this->allProductsArray = $allData->getAllProducts();
-
+        $this->allProductsArray =  $_SESSION["products"];
     }
 
-    public function displayProductsName(): void
+    public function displayProductsName()
     {
         $this->getProuductsArray();
 
