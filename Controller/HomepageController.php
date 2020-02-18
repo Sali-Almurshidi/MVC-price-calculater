@@ -70,6 +70,13 @@ class HomepageController
         }
     }
 
+
+    public function getCustomerInfo() {
+        $allData = new User();
+        $allCustomerArray = $allData->getAllCustomers();
+
+        
+    }
 }
 
 if (isset($_POST["refresh"])) {
