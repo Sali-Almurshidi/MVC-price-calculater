@@ -3,9 +3,9 @@
 
 class Customers
 {
-    private int $id;
-    private string $name;
-    private int $group_id;
+    private  $id;
+    private  $name;
+    private  $group_id;
 
     /**
      * Customers constructor.

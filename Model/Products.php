@@ -6,7 +6,7 @@ class Products
     private $id ;
     private $name ;
     private $description ;
-    private float $price ;
+    private  $price ;
 
     /**
      * Products constructor.

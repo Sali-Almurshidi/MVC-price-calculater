@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 class Groups
 {
-    private int $id;
-    private string $name ;
-    private int $variable_discount ;
-    private int $group_id;
+    private  $id;
+    private  $name ;
+    private  $variable_discount ;
+    private  $group_id;
 
     /**
      * Groups constructor.
