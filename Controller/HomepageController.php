@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
-require '../Model/User.php';
+session_start();
+//require '../Model/User.php';
 
 class HomepageController
 {
@@ -17,18 +18,41 @@ class HomepageController
 
         //load the view
 
+        if ($_SERVER["REQUEST_METHOD"] == "POST")
+        {
+
+            if (isset($_POST["submit"]))
+            {
+
+                if (($_POST["Product"] != null) && ($_POST["Customer"] != null))
+                {
+                    $_SESSION["productID"] = $_POST["Product"];
+                    $_SESSION["customerID"] = $_POST["Customer"];
+                    // move to next page
+                    header("Location: http://pricecalculator.local/View/selectionresult.php ");
+                }
+
+                else {
+                    echo "Select the Product name and the Customer Name";
+                }
+
+            }
+        }
+
+
         require 'View/homepage.php';
     }
 
-    public function getProuductsArray()
+    /*public function getProuductsArray()
     {
-        $allData = new User();
-        $this->allProductsArray = $allData->getAllProducts();
+
         displayProductsName();
-    }
+    }*/
 
     public function displayProductsName()
     {
+        $allData = new User();
+        $this->allProductsArray = $allData->getAllProducts();
         foreach ($this->allProductsArray as $key => $name) {
             echo ' <option value="' . $name->name . '"  href="#" id= "' . $key . '" > ' . $name->name . '</option>';
 

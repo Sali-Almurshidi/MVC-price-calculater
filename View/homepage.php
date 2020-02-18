@@ -1,8 +1,7 @@
 <?php
 declare(strict_types=1);
-ini_set('display_errors', "1");
-ini_set('display_startup_errors', "1");
-error_reporting(E_ALL);
+session_start();
+
 $allNames = new  HomepageController();
 
 ?>
@@ -41,30 +40,13 @@ $allNames = new  HomepageController();
                 <p> Select your products </p>
                 <select name="Product" id="selectProducts">
                     <option value='Not Available'>Products Name</option>
-                    <?php $allNames->getProuductsArray(); ?>
+                    <?php $allNames->displayProductsName(); ?>
                 </select>
                 <p id="resultProduct"></p>
                 <button type="submit" name="submit">Submit</button>
                 <button type="submit" name="refresh" class="btn btn-primary">refresh page!</button>
             </div>
-            <?php
 
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-                if (isset($_POST["submit"])) {
-
-                    if (($_POST["Product"] != null) && ($_POST["Customer"] != null)) {
-                        $_SESSION["productID"] = $_POST["Product"];
-                        $_SESSION["customerID"] = $_POST["Customer"];
-                        echo "move";
-                        // move to next page
-                        header("Location: http://pricecalculator.local/View/selectionresult.php ");
-                    } else {
-                        echo "Select the Product name and the Customer Name";
-                    }
-
-                }
-            }?>
         </div>
 
     </div>
