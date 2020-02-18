@@ -16,18 +16,20 @@ class HomepageController
 
         //load the view
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      //  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
             if (isset($_POST["submit"])) {
 
-                if (isset($_POST["Product"]) && isset ($_POST["Customer"] ) ) {
-                    $_SESSION["product ID:"] = $_POST["Product"];
-                    $_SESSION["customer ID:"] = $_POST["Customer"];
-
+                if (($_POST["Product"] != null) && ($_POST["Customer"]  != null )) {
+                    $_SESSION["productID"] = $_POST["Product"];
+                    $_SESSION["customerID"] = $_POST["Customer"];
+                    echo "move";
+                     // move to next page
+                }else{
+                    echo "Select the Product name and the Customer Name";
                 }
 
-
-                echo ("test");
-            }
+        // }
         }
 
         require 'View/homepage.php';

@@ -1,25 +1,8 @@
 <?php
 declare(strict_types=1);
 
-ini_set('display_errors', "1");
-ini_set('display_startup_errors', "1");
-error_reporting(E_ALL);
-
 $allNames = new  HomepageController();
 
-//var_dump($allCustomersArray["0"]['name']);
-function whatIsHappening() {
-    echo '<h2>$_GET</h2>';
-    var_dump($_GET);
-    echo '<h2>$_POST</h2>';
-    var_dump($_POST);
-    echo '<h2>$_COOKIE</h2>';
-    var_dump($_COOKIE);
-    echo '<h2>$_SESSION</h2>';
-    var_dump($_SESSION);
-}
-
-whatIsHappening();
 ?>
 <!doctype html>
 <html lang="en">
@@ -37,13 +20,12 @@ whatIsHappening();
     <?php require 'includes/header.php'?>
 
 
-
 <form method="post">
     <div class = "row" >
         <div class = "col-4 bg-info">
             <div  class="dropdown">
                 <p> Select your customer</p>
-                <select name="Customer"  onchange="customerSelect()" id="selectCustomer">
+                <select name="Customer" id="selectCustomer">
                     <option value='Not Available'>Customers Name</option>
                     <?php  $allNames->displayCustomerName(); ?>
                 </select>
@@ -54,7 +36,7 @@ whatIsHappening();
             <div class="dropdown">
 
                 <p> Select your products </p>
-                <select name="Product" onchange="productSelect()" id="selectProducts" >
+                <select name="Product" id="selectProducts" >
                     <option value='Not Available'>Products Name</option>
                     <?php  $allNames->displayProductsName(); ?>
                 </select>
@@ -66,16 +48,7 @@ whatIsHappening();
 
     </div>
 </form>
-    <script>
-        function customerSelect() {
-            var x = document.getElementById("selectCustomer").value;
-            document.getElementById("resultCustomer").innerHTML = "You selected: " + x;
-        }
-        function productSelect() {
-            var y = document.getElementById("selectProducts").value;
-            document.getElementById("resultProduct").innerHTML = "You selected: " + y;
-        }
-    </script>
+
     <?php require 'includes/footer.php'?>
 
     <!-- Optional JavaScript -->

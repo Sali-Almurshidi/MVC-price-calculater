@@ -8,7 +8,7 @@ require 'Controller/HomepageController.php';
 session_start();
 
 $customerID = $_SESSION['customerID'];
-$productsID = $_SESSION['productsID'];
+$productsID = $_SESSION['productID'];
 ?>
 
 <!doctype html>
