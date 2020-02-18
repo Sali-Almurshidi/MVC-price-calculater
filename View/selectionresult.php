@@ -1,8 +1,11 @@
 <?php
 declare(strict_types=1);
 
+ini_set('display_errors', "1");
+ini_set('display_startup_errors', "1");
+error_reporting(E_ALL);
 //include all your model files here
-require 'Model/*';
+require 'Model/User.php';
 //include all your controllers here
 require 'Controller/HomepageController.php';
 session_start();
@@ -14,10 +17,12 @@ $productsID = $_SESSION['productID'];
 <!doctype html>
 <html  lang="en">
 <head>
+
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Document</title>
 </head>
 <body>
+<?php echo ("fksdjflakefakln"); ?>
 <?php require 'includes/header.php'?>
 <!-- print product-->
 <?php ?>
