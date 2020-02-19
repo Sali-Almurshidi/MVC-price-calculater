@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
 
-
 class HomepageController
 {
 
@@ -20,10 +19,6 @@ class HomepageController
 
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (isset($_POST["refresh"])) {
-                header("refresh");
-                session_destroy();
-            }
 
             if (isset($_POST["submit"])) {
 
@@ -44,13 +39,6 @@ class HomepageController
     }
 
 
-
-    public function getCustomerInfo() {
-        $allData = new User();
-        $allCustomerArray = $allData->getAllCustomers();
-
-        
-    }
 }
 
 

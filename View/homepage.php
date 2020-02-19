@@ -1,9 +1,11 @@
 <?php
 declare(strict_types=1);
+
 session_start();
 ini_set('display_errors', "1");
 ini_set('display_startup_errors', "1");
 error_reporting(E_ALL);
+
 
 
 //$allNames = new  HomepageController();
@@ -44,7 +46,6 @@ whatIsHappening();
 
     <button type="submit" name="submit">Submit</button>
 
-    <button type="submit" name="refresh" class="btn btn-primary">refresh page!</button>
 
     <div class="row">
 
@@ -55,6 +56,7 @@ whatIsHappening();
                     <option value='Not Available'>Customers Name</option>
                     <?php
                     $allCustomerNames->displayCustomersName();
+
                     ?>
                 </select>
                 <p id="resultCustomer"></p>

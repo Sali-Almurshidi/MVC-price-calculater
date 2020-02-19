@@ -9,6 +9,7 @@ require '../Model/Groups.php';
 //include all your controllers here
 require '../Controller/HomepageController.php';
 
+
 ini_set('display_errors', "1");
 ini_set('display_startup_errors', "1");
 error_reporting(E_ALL);
@@ -25,6 +26,7 @@ function whatIsHappening() {
 }
 
 whatIsHappening();
+
 
 $customerID = $_SESSION['customerID'];
 $productsID = $_SESSION['productID'];

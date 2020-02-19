@@ -71,8 +71,8 @@ class Customers
 
     public function getCustomersArray()
     {
-        $allData = new User();
-        $this->allCustomersArray = $allData->getAllCustomers();
+
+        $this->allCustomersArray = $_SESSION["customers"];
     }
 
     public function displayCustomersName(): void
