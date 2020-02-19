@@ -10,6 +10,22 @@ class Products
     private $allProductsArray = array();
 
     /**
+     * @return array
+     */
+    public function getAllProductsArray(): array
+    {
+        return $this->allProductsArray;
+    }
+
+  /*  /**
+     * @param array $allProductsArray
+*/
+    public function setAllProductsArray(array $allProductsArray)
+    {
+        $this->allProductsArray = $allProductsArray;
+    }
+
+    /**
      * Products constructor.
      * @param $id
      * @param $name
@@ -51,7 +67,7 @@ class Products
     /**
      * @param mixed $name
      */
-    public function setName($name): string
+    public function setName($name)
     {
         $this->name = $name;
     }
@@ -90,8 +106,10 @@ class Products
 
     public function getProuductsArray()
     {
-        $this->allProductsArray =  $_SESSION["products"];
+
+         return $this->allProductsArray =  $_SESSION["products"];
     }
+
 
     public function displayProductsName()
     {

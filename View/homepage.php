@@ -57,6 +57,13 @@ whatIsHappening();
                     <?php
                     $allCustomerNames->displayCustomersName();
 
+                    $allCustomerNames->setAllCustomersArray($_SESSION["products"]);
+                    $forForeacchCustomers =$allCustomerNames->getAllCustomersArray();
+
+                    foreach ( $forForeacchCustomers as $key => $name) {
+                        echo ' <option value="' . $name->name . '"  id= "' . $key . '" > ' . $name->name . '</option>';
+                    }
+
                     ?>
                 </select>
                 <p id="resultCustomer"></p>
@@ -68,7 +75,17 @@ whatIsHappening();
                 <p> Select your products</p>
                 <select name="Product" id="selectProduct">
                     <option value='Not Available'>Products Name</option>
-                    <option value="' . $name->name . '"  id= "' . $key . '" > <?php$allProductsNames->displayProductsName(); ?>></option>';
+
+                    <?php
+
+                    $allProductsNames->setAllProductsArray($_SESSION["products"]);
+                    $forForeacchProducts =$allProductsNames->getAllProductsArray();
+
+                    foreach ( $forForeacchProducts as $key => $name) {
+                        echo ' <option value="' . $name->name . '"  id= "' . $key . '" > ' . $name->name . '</option>';
+                    }
+
+                    ?>
 
                 </select>
                 <p id="resultProduct"></p>

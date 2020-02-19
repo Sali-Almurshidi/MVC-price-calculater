@@ -10,6 +10,26 @@ class Customers
 
 
     /**
+     * @return array
+     */
+
+    public function setAllCustomersArray(array $allCustomersArray): void
+    {
+        $this->allCustomersArray = $allCustomersArray;
+    }
+
+
+    public function getAllCustomersArray(): array
+    {
+        return $this->allCustomersArray;
+    }
+
+    /**
+     * @param array $allCustomersArray
+     */
+
+
+    /**
      * Customers constructor.
      * @param int $id
      * @param string $name
@@ -73,10 +93,12 @@ class Customers
     public function getCustomersArray()
     {
 
-        $this->allCustomersArray = $_SESSION["customers"];
+        return $this->allCustomersArray = $_SESSION["customers"];
     }
 
-    public function displayCustomersName()
+
+   public function displayCustomersName(): void
+
     {
         $this->getCustomersArray();
 

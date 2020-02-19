@@ -7,9 +7,19 @@ class HomepageController
     /**
      * @return array
      */
-    public function getAllProductsArray(): array
+    public function getSelectProduct($name , $productsArray)
     {
-        return $this->allProductsArray;
+        $found = null;
+        foreach($productsArray as $key => $value) {
+            if ($value->name == $name) {
+                $found = $key;
+                break;
+            }
+        }
+        return $found ;
+      //  if ($found) unset($values[$key]);
+
+        //return $this->allProductsArray;
     }
 
     //render function with both $_GET and $_POST vars available if it would be needed.
