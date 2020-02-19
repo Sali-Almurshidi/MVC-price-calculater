@@ -12,13 +12,13 @@ class Customers
      * @return array
      */
 
-    public function setAllCustomersArray(array $allCustomersArray): void
+    public function setAllCustomersArray(array $allCustomersArray)
     {
         $this->allCustomersArray = $allCustomersArray;
     }
 
 
-    public function getAllCustomersArray(): array
+    public function getAllCustomersArray()
     {
         return $this->allCustomersArray;
     }
@@ -68,7 +68,7 @@ class Customers
     /**
      * @param string $name
      */
-    public function setName(string $name): void
+    public function setName(string $name)
     {
         $this->name = $name;
     }
@@ -76,7 +76,7 @@ class Customers
     /**
      * @return int
      */
-    public function getGroupId(): int
+    public function getGroupId()
     {
         return $this->group_id;
     }
@@ -84,8 +84,9 @@ class Customers
     /**
      * @param int $group_id
      */
-    public function setGroupId(int $group_id): void
+    public function setGroupId(int $group_id)
     {
+        echo $group_id;
         $this->group_id = $group_id;
     }
 
