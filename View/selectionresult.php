@@ -23,12 +23,33 @@ error_reporting(E_ALL);
 }
 whatIsHappening();*/
 
+
+ini_set('display_errors', "1");
+ini_set('display_startup_errors', "1");
+error_reporting(E_ALL);
+
+function whatIsHappening() {
+    echo '<h2>$_GET</h2>';
+    var_dump($_GET);
+    echo '<h2>$_POST</h2>';
+    var_dump($_POST);
+    echo '<h2>$_COOKIE</h2>';
+    var_dump($_COOKIE);
+    echo '<h2>$_SESSION</h2>';
+    var_dump($_SESSION);
+}
+
+whatIsHappening();
+
+
 $customerID = $_SESSION['customerID'];
 $productsID = $_SESSION['productID'];
+
 
 $allProductsNames = new  Products();
 $allCustomerNames = new  Customers();
 $controller = new HomepageController();
+$allGroup = new Groups();
 ?>
 
 <!doctype html>
@@ -60,8 +81,9 @@ $allCustomerNames->setAllCustomersArray( $_SESSION["customers"]);
 
 $foundCustomer = $controller->getCustomerGroubID($allCustomerNames->getName() ,$allCustomerNames->getAllCustomersArray() );
 $allCustomerNames->setGroupId($allCustomerNames->getAllCustomersArray()[$foundCustomer]->group_id );
-$allCustomerNames->getGroupId();
 
+$allGroup->setId($allCustomerNames->getGroupId());
+$controller->getGroupId($allGroup->getId(),$_SESSION["groups"] );
 //echo  ;
 ?>
 <?php require 'includes/footer.php'?>

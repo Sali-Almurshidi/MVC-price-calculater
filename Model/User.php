@@ -6,6 +6,7 @@ class User
     private $name;
     private $allProductsArray = [];
     private $allCustomersArray = [];
+    private $allGroupArray = [];
 
  /*   public function __construct(string $name)
     {
@@ -29,6 +30,13 @@ class User
     {
         $allProducts = file_get_contents("Database/products.json");
         $this->allProductsArray = json_decode($allProducts);
+        return $this->allProductsArray;
+    }
+
+    public function getAllGroup()
+    {
+        $allGroup = file_get_contents("Database/groups.json");
+        $this->allProductsArray = json_decode($allGroup);
         return $this->allProductsArray;
     }
 }

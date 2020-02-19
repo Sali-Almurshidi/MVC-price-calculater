@@ -111,13 +111,13 @@ class Products
     }
 
 
-    public function displayProductsName()
-    {
-        $this->getProuductsArray();
-
-        foreach ( $this->allProductsArray as $key => $name) {
-            echo ' <option value="' . $name->name . '"  href="#" id= "' . $key . '" > ' . $name->name . '</option>';
-        }
-    }
+//    public function displayProductsName()
+//    {
+//        $this->getProuductsArray();
+//
+//        foreach ( $this->allProductsArray as $key => $name) {
+//            echo ' <option value="' . $name->name . '"  href="#" id= "' . $key . '" > ' . $name->name . '</option>';
+//        }
+//    }
 
 }

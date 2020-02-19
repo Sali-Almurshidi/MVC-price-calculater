@@ -4,7 +4,6 @@ declare(strict_types=1);
 class HomepageController
 {
 
-
     /**
      * @return array
      */
@@ -31,6 +30,23 @@ class HomepageController
         }
        return  $found ;
     }
+
+    public function getGroupId($id, $groupArray) {
+        $result = null;
+        foreach ($groupArray as $key => $value) {
+            if ($id == $value->id) {
+                $result = $value->group_id;
+                break;
+
+            }
+        }
+        echo "<br/>".$result;
+    }
+
+    
+
+
+
 
 
     //render function with both $_GET and $_POST vars available if it would be needed.

@@ -22,6 +22,7 @@ if(isset($_SESSION)){
 //if($_SESSION["products"] == null &&  $_SESSION["customers"] == null){
     $_SESSION["products"] =$userIndex->getAllProducts();
     $_SESSION["customers"] =$userIndex->getAllCustomers();
+    $_SESSION["groups"] =$userIndex->getAllGroup();
 }
 
 //you could write a simple IF here based on some $_GET or $_POST vars, to choose your controller
