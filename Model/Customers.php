@@ -1,11 +1,32 @@
 <?php
-
+declare(strict_types=1);
 
 class Customers
 {
     private  $id;
     private  $name;
     private  $group_id;
+    private $allCustomersArray = array();
+
+    /**
+     * @return array
+     */
+
+    public function setAllCustomersArray(array $allCustomersArray)
+    {
+        $this->allCustomersArray = $allCustomersArray;
+    }
+
+
+    public function getAllCustomersArray()
+    {
+        return $this->allCustomersArray;
+    }
+
+    /**
+     * @param array $allCustomersArray
+     */
+
 
     /**
      * Customers constructor.
@@ -13,12 +34,12 @@ class Customers
      * @param string $name
      * @param int $group_id
      */
-    public function __construct(int $id, string $name, int $group_id)
+/*    public function __construct(int $id, string $name, int $group_id)
     {
         $this->id = $id;
         $this->name = $name;
         $this->group_id = $group_id;
-    }
+    }*/
 
     /**
      * @return int
@@ -47,7 +68,7 @@ class Customers
     /**
      * @param string $name
      */
-    public function setName(string $name): void
+    public function setName(string $name)
     {
         $this->name = $name;
     }
@@ -55,7 +76,7 @@ class Customers
     /**
      * @return int
      */
-    public function getGroupId(): int
+    public function getGroupId()
     {
         return $this->group_id;
     }
@@ -63,10 +84,24 @@ class Customers
     /**
      * @param int $group_id
      */
-    public function setGroupId(int $group_id): void
+    public function setGroupId(int $group_id)
     {
+        echo $group_id;
         $this->group_id = $group_id;
     }
 
+    public function getCustomersArray()
+    {
 
+        return $this->allCustomersArray = $_SESSION["customers"];
+    }
+
+   public function displayCustomersName(): void
+    {
+        $this->getCustomersArray();
+
+        foreach ( $this->allCustomersArray as $key => $name) {
+            echo ' <option value="' . $name->name . '"  href="#" id= "' . $key . '" > ' . $name->name . '</option>';
+        }
+    }
 }
