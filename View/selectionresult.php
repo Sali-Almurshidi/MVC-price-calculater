@@ -1,16 +1,19 @@
 <?php
 declare(strict_types=1);
 session_start();
+ini_set('display_errors', "1");
+ini_set('display_startup_errors', "1");
+error_reporting(E_ALL);
 
 require '../Model/User.php';
 require '../Model/Customers.php';
 require '../Model/Products.php';
 require '../Model/Groups.php';
-//include all your controllers here
-require '../Controller/HomepageController.php';
-ini_set('display_errors', "1");
-ini_set('display_startup_errors', "1");
-error_reporting(E_ALL);
+
+require '../Controller/SelectionResultController.php';
+
+$controller = new SelectionResultController();
+//$controller->getRequire();
 /*function whatIsHappening() {
     echo '<h2>$_GET</h2>';
     var_dump($_GET);
@@ -26,9 +29,17 @@ whatIsHappening();*/
 $customerID = $_SESSION['customerID'];
 $productsID = $_SESSION['productID'];
 
+//static::$allProductsNames = new  Products();
 $allProductsNames = new  Products();
+
+$_SESSION['objectProduct'] = $allProductsNames;
+
 $allCustomerNames = new  Customers();
-$controller = new HomepageController();
+
+$_SESSION['objectCustomer'] = $allCustomerNames;
+
+
+
 ?>
 
 <!doctype html>
@@ -45,11 +56,13 @@ $controller = new HomepageController();
 
 $allProductsNames->setName($productsID);
 $allProductsNames->setAllProductsArray( $_SESSION["products"]);
+$controller->getSelectProduct($allProductsNames->getName() ,$allProductsNames->getAllProductsArray() );
 
-$foundProduct = $controller->getSelectProduct($allProductsNames->getName() ,$allProductsNames->getAllProductsArray() );
+echo $allProductsNames->getName()."<br/>";
+echo $allProductsNames->getPrice()."<br/>";
+echo $allProductsNames->getDescription()."<br/>";
 
-
-echo $allProductsNames->getAllProductsArray()[$foundProduct]->name ."<br/>" . $allProductsNames->getAllProductsArray()[$foundProduct]->description ."<br/>" . $allProductsNames->getAllProductsArray()[$foundProduct]->price ."<br/>";
+//echo $allProductsNames->getAllProductsArray()[$foundProduct]->name ."<br/>" . $allProductsNames->getAllProductsArray()[$foundProduct]->description ."<br/>" . $allProductsNames->getAllProductsArray()[$foundProduct]->price ."<br/>";
 
 ?>
 <!-- print customers-->

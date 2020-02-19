@@ -3,19 +3,9 @@ declare(strict_types=1);
 
 class User
 {
-    private $name;
     private $allProductsArray = [];
     private $allCustomersArray = [];
 
- /*   public function __construct(string $name)
-    {
-        $this->name = $name;
-    }*/
-
-    public function getName(): string
-    {
-        return $this->name;
-    }
     // to get all the customer information
     public function getAllCustomers()
     {
@@ -31,4 +21,5 @@ class User
         $this->allProductsArray = json_decode($allProducts);
         return $this->allProductsArray;
     }
+
 }
