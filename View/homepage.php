@@ -38,6 +38,14 @@ $allCustomerNames = new  Customers();
                     <option value='Not Available'>Customers Name</option>
                     <?php
                     $allCustomerNames->displayCustomersName();
+
+                    $allCustomerNames->setAllCustomersArray($_SESSION["products"]);
+                    $forForeacchCustomers =$allCustomerNames->getAllCustomersArray();
+
+                    foreach ( $forForeacchCustomers as $key => $name) {
+                        echo ' <option value="' . $name->name . '"  id= "' . $key . '" > ' . $name->name . '</option>';
+                    }
+
                     ?>
                 </select>
                 <p id="resultCustomer"></p>
@@ -50,7 +58,14 @@ $allCustomerNames = new  Customers();
                 <select name="Product" id="selectProduct">
                     <option value='Not Available'>Products Name</option>
                     <?php
-                    $allProductsNames->displayProductsName();
+
+                    $allProductsNames->setAllProductsArray($_SESSION["products"]);
+                    $forForeacchProducts =$allProductsNames->getAllProductsArray();
+
+                    foreach ( $forForeacchProducts as $key => $name) {
+                        echo ' <option value="' . $name->name . '"  id= "' . $key . '" > ' . $name->name . '</option>';
+                    }
+
                     ?>
                 </select>
                 <p id="resultProduct"></p>

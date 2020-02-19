@@ -9,6 +9,26 @@ class Customers
     private $allCustomersArray = array();
 
     /**
+     * @return array
+     */
+
+    public function setAllCustomersArray(array $allCustomersArray): void
+    {
+        $this->allCustomersArray = $allCustomersArray;
+    }
+
+
+    public function getAllCustomersArray(): array
+    {
+        return $this->allCustomersArray;
+    }
+
+    /**
+     * @param array $allCustomersArray
+     */
+
+
+    /**
      * Customers constructor.
      * @param int $id
      * @param string $name
