@@ -45,9 +45,11 @@ whatIsHappening();
 $customerID = $_SESSION['customerID'];
 $productsID = $_SESSION['productID'];
 
+
 $allProductsNames = new  Products();
 $allCustomerNames = new  Customers();
 $controller = new HomepageController();
+$allGroup = new Groups();
 ?>
 
 <!doctype html>
@@ -79,8 +81,9 @@ $allCustomerNames->setAllCustomersArray( $_SESSION["customers"]);
 
 $foundCustomer = $controller->getCustomerGroubID($allCustomerNames->getName() ,$allCustomerNames->getAllCustomersArray() );
 $allCustomerNames->setGroupId($allCustomerNames->getAllCustomersArray()[$foundCustomer]->group_id );
-$allCustomerNames->getGroupId();
 
+$allGroup->setId($allCustomerNames->getGroupId());
+$controller->getGroupId($allGroup->getId(),$_SESSION["groups"] );
 //echo  ;
 ?>
 <?php require 'includes/footer.php'?>

@@ -98,22 +98,17 @@ class Customers
     }
 
 
-   public function displayCustomersName(): void
-
-    {
-        $this->getCustomersArray();
-
-        foreach ( $this->allCustomersArray as $key => $value) {
-            echo $value->name;
-
-          //echo ' <option value="' . $name->name . '"  href="#" id= "' . $key . '" > ' . $name->name . '</option>';
-
-          }
-    }
-
-//    public function showCustName() {
+//   public function displayCustomersName(): void
+//
+//    {
 //        $this->getCustomersArray();
 //
-//        foreach ()
+//        foreach ( $this->allCustomersArray as $key => $value) {
+//            echo $value->name;
+//
+//          //echo ' <option value="' . $name->name . '"  href="#" id= "' . $key . '" > ' . $name->name . '</option>';
+//
+//          }
 //    }
+
 }
