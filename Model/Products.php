@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 class Products
 {
-    private $id ;
     private $name ;
     private $description ;
     private  $price ;
@@ -30,31 +29,8 @@ class Products
      * @param $id
      * @param $name
      * @param $description
-     * @param Float $price
+     * @param $price
      */
-    /*public function __construct($id, $name, $description, Float $price)
-    {
-        $this->id = $id;
-        $this->name = $name;
-        $this->description = $description;
-        $this->price = $price;
-    }*/
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id): int
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return mixed
@@ -83,7 +59,7 @@ class Products
     /**
      * @param mixed $description
      */
-    public function setDescription($description): string
+    public function setDescription($description)
     {
         $this->description = $description;
     }
@@ -91,7 +67,7 @@ class Products
     /**
      * @return Float
      */
-    public function getPrice(): Float
+    public function getPrice()
     {
         return $this->price;
     }
@@ -99,25 +75,9 @@ class Products
     /**
      * @param Float $price
      */
-    public function setPrice(float $price): float
+    public function setPrice(float $price)
     {
         $this->price = $price;
     }
-
-    public function getProuductsArray()
-    {
-
-         return $this->allProductsArray =  $_SESSION["products"];
-    }
-
-
-//    public function displayProductsName()
-//    {
-//        $this->getProuductsArray();
-//
-//        foreach ( $this->allProductsArray as $key => $name) {
-//            echo ' <option value="' . $name->name . '"  href="#" id= "' . $key . '" > ' . $name->name . '</option>';
-//        }
-//    }
 
 }
