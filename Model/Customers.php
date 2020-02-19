@@ -8,6 +8,7 @@ class Customers
     private  $group_id;
     private $allCustomersArray = array();
 
+
     /**
      * Customers constructor.
      * @param int $id
@@ -75,12 +76,21 @@ class Customers
         $this->allCustomersArray = $_SESSION["customers"];
     }
 
-    public function displayCustomersName(): void
+    public function displayCustomersName()
     {
         $this->getCustomersArray();
 
-        foreach ( $this->allCustomersArray as $key => $name) {
-            echo ' <option value="' . $name->name . '"  href="#" id= "' . $key . '" > ' . $name->name . '</option>';
-        }
+        foreach ( $this->allCustomersArray as $key => $value) {
+            echo $value->name;
+
+          //echo ' <option value="' . $name->name . '"  href="#" id= "' . $key . '" > ' . $name->name . '</option>';
+
+          }
     }
+
+//    public function showCustName() {
+//        $this->getCustomersArray();
+//
+//        foreach ()
+//    }
 }

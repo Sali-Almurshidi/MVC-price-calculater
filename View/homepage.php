@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-session_start();
+
 ini_set('display_errors', "1");
 ini_set('display_startup_errors', "1");
 error_reporting(E_ALL);
@@ -68,9 +68,8 @@ whatIsHappening();
                 <p> Select your products</p>
                 <select name="Product" id="selectProduct">
                     <option value='Not Available'>Products Name</option>
-                    <?php
-                    $allProductsNames->displayProductsName();
-                    ?>
+                    <option value="' . $name->name . '"  id= "' . $key . '" > <?php$allProductsNames->displayProductsName(); ?>></option>';
+
                 </select>
                 <p id="resultProduct"></p>
             </div>
