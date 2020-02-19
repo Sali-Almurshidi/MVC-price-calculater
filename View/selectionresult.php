@@ -49,6 +49,23 @@ $customerID = $_SESSION['customerID'];
 $productsID = $_SESSION['productID'];
 
 
+//static::$allProductsNames = new  Products();
+
+$allProductsNames = new  Products();
+
+$_SESSION['objectProduct'] = $allProductsNames;
+
+$allCustomerNames = new  Customers();
+
+$controller = new HomepageController();
+$allGroup = new Groups();
+
+
+$_SESSION['objectCustomer'] = $allCustomerNames;
+
+
+
+
 ?>
 
 <!doctype html>

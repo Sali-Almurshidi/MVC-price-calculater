@@ -4,6 +4,7 @@ declare(strict_types=1);
 class HomepageController
 {
 
+
     public function postIsset(){
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -15,7 +15,6 @@ class User
         return $this->allCustomersArray;
 
     }
-
     // to get all the products information
     public function getAllProducts()
     {
@@ -24,4 +23,14 @@ class User
         return $this->allProductsArray;
     }
 
+
+    public function getAllGroup()
+    {
+        $allGroup = file_get_contents("Database/groups.json");
+        $this->allProductsArray = json_decode($allGroup);
+        return $this->allProductsArray;
+    }
 }
+
+
+
