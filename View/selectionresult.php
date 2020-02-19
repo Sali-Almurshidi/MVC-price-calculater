@@ -74,7 +74,7 @@ echo $allProductsNames->getAllProductsArray()[$foundProduct]->name ."<br/>" . $a
 
 ?>
 <!-- print customers-->
-<?php echo $customerID ."<br/>" ;
+<?php echo " customer". $customerID ."<br/>" ;
 
 $allCustomerNames->setName($customerID);
 $allCustomerNames->setAllCustomersArray( $_SESSION["customers"]);

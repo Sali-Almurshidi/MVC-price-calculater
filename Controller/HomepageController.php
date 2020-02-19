@@ -36,14 +36,20 @@ class HomepageController
         foreach ($groupArray as $key => $value) {
             if ($id == $value->id) {
                 $result = $value->group_id;
-                break;
 
+//                foreach ($groupArray as $key => $value) {
+//
+//                    break;
+//                }
             }
         }
-        echo "<br/>".$result;
+        echo "<br/> group array group-ID: ".$result;
     }
 
-    
+//    public function compare($id,$groupArray) {
+//
+//    }
+
 
 
 
