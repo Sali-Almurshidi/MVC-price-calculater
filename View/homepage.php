@@ -55,9 +55,8 @@ whatIsHappening();
                 <select name="Customer" id="selectCustomer">
                     <option value='Not Available'>Customers Name</option>
                     <?php
-                    $allCustomerNames->displayCustomersName();
 
-                    $allCustomerNames->setAllCustomersArray($_SESSION["products"]);
+                    $allCustomerNames->setAllCustomersArray($_SESSION["customers"]);
                     $forForeacchCustomers =$allCustomerNames->getAllCustomersArray();
 
                     foreach ( $forForeacchCustomers as $key => $name) {

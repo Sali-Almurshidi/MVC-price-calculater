@@ -62,21 +62,27 @@ $controller = new HomepageController();
 <!-- print product-->
 <?php
 
-//echo $productsID . "<br/";
-
 $allProductsNames->setName($productsID);
 $allProductsNames->setAllProductsArray( $_SESSION["products"]);
 
-$found = $controller->getSelectProduct($allProductsNames->getName() ,$allProductsNames->getAllProductsArray() );
+$foundProduct = $controller->getSelectProduct($allProductsNames->getName() ,$allProductsNames->getAllProductsArray() );
 
 
-echo $allProductsNames->getAllProductsArray()[$found]->name ."<br/>" . $allProductsNames->getAllProductsArray()[$found]->description ."<br/>" . $allProductsNames->getAllProductsArray()[$found]->price ;
+echo $allProductsNames->getAllProductsArray()[$foundProduct]->name ."<br/>" . $allProductsNames->getAllProductsArray()[$foundProduct]->description ."<br/>" . $allProductsNames->getAllProductsArray()[$foundProduct]->price ."<br/>";
 
-//echo array_search(20,$arr,true);
-//echo $customerID ;
 ?>
 <!-- print customers-->
-<?php echo $productsID ?>
+<?php echo $customerID ."<br/>" ;
+
+$allCustomerNames->setName($customerID);
+$allCustomerNames->setAllCustomersArray( $_SESSION["customers"]);
+
+$foundCustomer = $controller->getCustomerGroubID($allCustomerNames->getName() ,$allCustomerNames->getAllCustomersArray() );
+$allCustomerNames->setGroupId($allCustomerNames->getAllCustomersArray()[$foundCustomer]->group_id );
+$allCustomerNames->getGroupId();
+
+//echo  ;
+?>
 <?php require 'includes/footer.php'?>
 </body>
 </html>

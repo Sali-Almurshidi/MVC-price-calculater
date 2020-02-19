@@ -17,13 +17,23 @@ class HomepageController
             }
         }
         return $found ;
-      //  if ($found) unset($values[$key]);
-
-        //return $this->allProductsArray;
     }
 
+    public function getCustomerGroubID($name , $customersArray)
+    {
+        $found = null;
+        foreach($customersArray as $key => $value) {
+            if ($value->name == $name) {
+                $found = $key;
+                break;
+            }
+        }
+       return  $found ;
+    }
+
+
     //render function with both $_GET and $_POST vars available if it would be needed.
-    public function render(array $GET, array $POST)
+/*    public function render(array $GET, array $POST)
     {
 
 
@@ -45,8 +55,28 @@ class HomepageController
 
 
         require 'View/homepage.php';
-    }
+    }*/
+    public function postIsset(){
 
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            if (isset($_POST["submit"])) {
+
+                if (($_POST["Product"] != '') && ($_POST["Customer"] != '')) {
+                    $_SESSION["productID"] = $_POST["Product"];
+                    $_SESSION["customerID"] = $_POST["Customer"];
+                    // move to next page
+                    header("Location: http://pricecalculator.local/View/selectionresult.php ");
+                } else {
+                    echo "Select the Product name and the Customer Name";
+                }
+
+            }
+        }
+
+
+        require 'View/homepage.php';
+    }
 
 }
 
