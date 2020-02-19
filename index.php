@@ -18,7 +18,8 @@ $userIndex = new User();
 /*$userStorage = new  User();
 localStorage.setItem(‘allCustomers’, $userStorage->getAllCustomers());
 localStorage.setItem(‘allProducts’, $userStorage->getAllProducts());*/
-if($_SESSION["products"] == null &&  $_SESSION["customers"] == null){
+if(isset($_SESSION)){
+//if($_SESSION["products"] == null &&  $_SESSION["customers"] == null){
     $_SESSION["products"] =$userIndex->getAllProducts();
     $_SESSION["customers"] =$userIndex->getAllCustomers();
 }

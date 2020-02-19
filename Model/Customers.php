@@ -72,10 +72,10 @@ class Customers
     public function getCustomersArray()
     {
 
-        $this->allCustomersArray = $_SESSION["customers"];
+        return $this->allCustomersArray = $_SESSION["customers"];
     }
 
-    public function displayCustomersName(): void
+   public function displayCustomersName(): void
     {
         $this->getCustomersArray();
 

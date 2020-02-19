@@ -38,7 +38,6 @@ $allCustomerNames = new  Customers();
                     <option value='Not Available'>Customers Name</option>
                     <?php
                     $allCustomerNames->displayCustomersName();
-
                     ?>
                 </select>
                 <p id="resultCustomer"></p>
