@@ -57,10 +57,6 @@ $_SESSION['objectProduct'] = $allProductsNames;
 
 $allCustomerNames = new  Customers();
 
-$controller = new HomepageController();
-$allGroup = new Groups();
-
-
 $_SESSION['objectCustomer'] = $allCustomerNames;
 
 
