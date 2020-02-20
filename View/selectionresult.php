@@ -30,7 +30,7 @@ whatIsHappening();*/
 ini_set('display_errors', "1");
 ini_set('display_startup_errors', "1");
 error_reporting(E_ALL);
-
+/*
 function whatIsHappening() {
     echo '<h2>$_GET</h2>';
     var_dump($_GET);
@@ -42,7 +42,7 @@ function whatIsHappening() {
     var_dump($_SESSION);
 }
 
-whatIsHappening();
+whatIsHappening();*/
 
 
 $customerID = $_SESSION['customerID'];
@@ -96,8 +96,36 @@ $allCustomerNames->setAllCustomersArray( $_SESSION["customers"]);
 $foundCustomer = $controller->getCustomerGroubID($allCustomerNames->getName() ,$allCustomerNames->getAllCustomersArray() );
 $allCustomerNames->setGroupId($allCustomerNames->getAllCustomersArray()[$foundCustomer]->group_id );
 
-$allGroup->setId($allCustomerNames->getGroupId());
-$controller->getGroupId($allGroup->getId(),$_SESSION["groups"] );
+$controller->countDiscount( $allCustomerNames->getGroupId(), $_SESSION["groups"]);
+
+$resultArray = $controller->getResultArray();
+var_dump($resultArray);
+
+foreach ($resultArray as $value){
+    echo $value['name'].'<br/>'. $value['discount'].'<br/>'."--------------------".'<br/>';
+}
+$keyResult = null;
+
+for ($i=0 ; $i<count($resultArray) ; $i++){
+
+    if ($i == 0) {
+        $min = $temp = $resultArray[$i]['discount'];
+        $keyResult = $i;
+    }
+    if ($i > 0) {
+        if ($resultArray[$i]['discount'] < $temp) {
+            $min = $resultArray[$i]['discount'];
+            $keyResult = $i;
+        }
+    }
+}
+
+echo '<br/>'.' the min value is = ' . $resultArray[$keyResult]['discount'] . ' for the ' . $resultArray[$keyResult]['name'] ;
+//$anything=  min($resultArray['discount']);
+//var_dump($anything);
+//min($resultArray);
+/*$allGroup->setId($allCustomerNames->getGroupId());
+$controller->getGroupId($allGroup->getId(),$_SESSION["groups"] );*/
 //echo  ;
 ?>
 <?php require 'includes/footer.php'?>
