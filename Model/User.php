@@ -5,7 +5,7 @@ class User
 {
     private $allProductsArray = [];
     private $allCustomersArray = [];
-    private $allGroupArray = [];
+    private $allGroupsArray = [];
 
     // to get all the customer information
     public function getAllCustomers()
@@ -23,14 +23,9 @@ class User
         return $this->allProductsArray;
     }
 
-
-    public function getAllGroup()
-    {
-        $allGroup = file_get_contents("Database/groups.json");
-        $this->allProductsArray = json_decode($allGroup);
-        return $this->allProductsArray;
+    public function getAllGroups(){
+        $allGroups = file_get_contents("Database/groups.json");
+        $this->allGroupsArray = json_decode($allGroups);
+        return $this->allGroupsArray;
     }
 }
-
-
-

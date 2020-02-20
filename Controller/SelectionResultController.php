@@ -14,7 +14,6 @@ class SelectionResultController
      */
     public function getResultArray(): array
     {
-        var_dump($this->resultArray);
         return $this->resultArray;
     }
 
@@ -60,11 +59,11 @@ class SelectionResultController
             if ($id == $value->id){
 
                 if(isset($value->variable_discount)){
-                    $discount = $_SESSION['objectProduct']->getgetPrice() - (($_SESSION['objectProduct']->getPrice() / 100)*$value->variable_discount);
+                    $discount = $_SESSION['objectProduct']->getPrice() - (($_SESSION['objectProduct']->getPrice() / 100)*$value->variable_discount);
                 }
 
                 if(isset($value->fixed_discount)){
-                    $discount = $_SESSION['objectProduct']->getgetPrice() - $value->fixed_discount ;
+                    $discount = $_SESSION['objectProduct']->getPrice() - $value->fixed_discount ;
                 }
 
                 if($discount < 0) {

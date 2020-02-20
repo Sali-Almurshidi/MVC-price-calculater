@@ -30,7 +30,7 @@ whatIsHappening();*/
 ini_set('display_errors', "1");
 ini_set('display_startup_errors', "1");
 error_reporting(E_ALL);
-
+/*
 function whatIsHappening() {
     echo '<h2>$_GET</h2>';
     var_dump($_GET);
@@ -42,7 +42,7 @@ function whatIsHappening() {
     var_dump($_SESSION);
 }
 
-whatIsHappening();
+whatIsHappening();*/
 
 
 $customerID = $_SESSION['customerID'];
@@ -96,8 +96,16 @@ $allCustomerNames->setAllCustomersArray( $_SESSION["customers"]);
 $foundCustomer = $controller->getCustomerGroubID($allCustomerNames->getName() ,$allCustomerNames->getAllCustomersArray() );
 $allCustomerNames->setGroupId($allCustomerNames->getAllCustomersArray()[$foundCustomer]->group_id );
 
-$allGroup->setId($allCustomerNames->getGroupId());
-$controller->getGroupId($allGroup->getId(),$_SESSION["groups"] );
+$controller->countDiscount( $allCustomerNames->getGroupId(), $_SESSION["groups"]);
+
+$resultArray = $controller->getResultArray();
+var_dump($resultArray);
+
+foreach ($resultArray as $value){
+    echo $value->discount ;
+}
+/*$allGroup->setId($allCustomerNames->getGroupId());
+$controller->getGroupId($allGroup->getId(),$_SESSION["groups"] );*/
 //echo  ;
 ?>
 <?php require 'includes/footer.php'?>
